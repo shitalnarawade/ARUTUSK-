@@ -1,1 +1,115 @@
-in
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.js">
+    <title>ul/li section</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: auto;
+            /* //background-color: rgb(81, 80, 78); */
+        }
+        h1{
+            font-size: 35px;
+            text-align: center;
+            margin: 20px;
+            padding: 25px;
+              
+        }
+        .con_1{
+            width: 30%;
+            position: relative;
+            margin: 10px auto;
+            border: 4px black;
+            background-color: #afaba2;
+            color: #120b0b;
+            padding: 0px 20px ;
+        }
+        input{
+            width: 90%;
+            padding: 10px 5px;
+            margin: 0px 0px 10px 0px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        label{
+            font-size: 25px;
+        }
+        li{
+            font-size: 25px;
+        }
+        .btn{
+            width: 93%;
+            padding: 10px 5px;
+            margin: 10px 0px;
+            background-color: rgb(45, 41, 41);
+            color: #fff;
+            border-radius: 5px;
+        }
+        .error{
+            background-color: rgb(238, 61, 61);
+            color: #fff;
+             margin: 7px;
+             padding: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="con_1">
+        <section>
+            <form action="#" id="my_form">
+                <div id="user_head">
+                    <h1>Add User</h1>
+                </div>
+                <div class="msg"></div>
+                <div class="form_class">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="form_class">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email">  
+                </div>
+                <input class="btn" type="submit" value="Submit">
+
+              <div> 
+                 <ul id="users">
+                     <li class="item-group" id="item1">item 1</li>
+                     <li class="item-group" id="item2">item 2</li>
+                    <li class="item-group" id="item3">item 3</li>
+                    <li class="item-group" id="item4">item 4</li>
+                 </ul>
+              </div> 
+            </form>
+            
+        </section>
+      </div>
+    </div>
+    <script>
+
+        const userhead = document.getElementById('user_head');
+
+        userhead.style.border = "solid 2px #000";
+         
+        const item_1 =document.getElementById('item1');
+        item_1.style.color ='solid 2px green';
+        
+        const item = document.getElementById('item1');
+        item.style.color = 'green';
+        item.style.font = 'bold';
+      
+              
+            
+    </script>
+    
+</body>
+</html>

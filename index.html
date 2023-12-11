@@ -96,16 +96,28 @@
     </div>
     <script>
 
+       const liclass = document.getElementsByClassName('item-group');
+        
+          for(let i=0; i<liclass.length; i++){
+               liclass[i].style.fontWeight = 'bold';
+           }
+        const li = document.getElementsByTagName('li');
+        
+            //li[1].style.fontWeight ='bold';
+               for(let i=0; i<li.length; i++){
+                li[i].style.backgroundColor = 'gray';
+        }
+
        
 
-  var thirdElement = document.getElementById('users').getElementsByTagName('li')[2];
+//   var thirdElement = document.getElementById('users').getElementsByTagName('li')[2];
 
-  var listItems = document.getElementById('users').getElementsByTagName('li');
-  for (var i = 0; i < listItems.length; i++) {
-    listItems[i].style.fontWeight ='bold';
-  }
+//   var listItems = document.getElementById('users').getElementsByTagName('li');
+//   for (var i = 0; i < listItems.length; i++) {
+//     listItems[i].style.fontWeight ='bold';
+//   }
   
-  listItems[2].style.backgroundColor = 'green';
+//   listItems[2].style.backgroundColor = 'green';
       
               
             

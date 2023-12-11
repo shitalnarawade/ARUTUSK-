@@ -66,11 +66,14 @@
     <div class="container">
       <div class="con_1">
         <section>
-            <form action="#" id="my_form">
-                <div id="user_head">
+        <header>
+            
+                <div id="user_head" class="container">
                     <h1>Add User</h1>
                 </div>
-                <div class="msg"></div>
+         </header>
+            <div class="msg"></div>
+            <form  action="#" id="my_form" >
                 <div class="form_class">
                     <label for="name">Name:</label>
                     <input type="text" id="name">
@@ -80,6 +83,7 @@
                     <input type="text" id="email">  
                 </div>
                 <input class="btn" type="submit" value="Submit">
+              </form>
 
               <div> 
                  <ul id="users">
@@ -88,21 +92,93 @@
                     <li class="item-group" id="item3">Item 3</li>
                     <li class="item-group" id="item4">Item 4</li>
                  </ul>
+                 <!-- <span>HI</span> -->
               </div> 
-            </form>
+            
             
         </section>
       </div>
     </div>
     <script>
 
+
+       //parentElement
+    //    let itemlist = document.querySelector('#users');
+    //    console.log(itemlist.parentNode);
+    //    itemlist.parentNode.style.backgroundColor='green';
+    // console.log(itemlist.parentNode.parentNode.parentNode);
+
+      // parentElement
+    //    let itemlist = document.querySelector('#users');
+    //     console.log(itemlist.parentElement);
+    //     itemlist.parentElement.style.backgroundColor='green';
+    //     console.log(itemlist.parentElement.parentElement.parentElement);
+
+       // parentElement
+       let itemlist = document.querySelector('#users');
+        // console.log(itemlist.parentElement);
+        // itemlist.parentElement.style.backgroundColor='green';
+        // console.log(itemlist.parentElement.parentElement.parentElement);
+
+        //childNode
+        // console.log(itemlist.childNodes);
+        // console.log(itemlist.children);
+        // console.log(itemlist.children);
+        // itemlist.children[1].style.backgroundColor='green';
+
+        //firstChild
+        // console.log( itemlist.firstChild);
+        // //firstElementChild
+        // console.log( itemlist.firstElementChild);
+        // itemlist.firstElementChild.style.backgroundColor='green';
+        // //lastElementChild
+        // console.log( itemlist.lastElementChild);
+        // itemlist.lastElementChild.style.backgroundColor='green';
+        // itemlist.lastElementChild.textContent='Hello1';
+
+        // //nextSibling
+        // console.log(itemlist.nextSibling);
+        // //nextElementSibling
+        // console.log(itemlist.nextElementSibling);
+
+        // //prevSibling
+        // console.log(itemlist.prevSibling);
+        // //prevElementSibling
+        // console.log(itemlist.prevElementSibling);
+
+        //Createnew Div
+        let newdiv = document.createElement('div');
+        //let newdiv = document.createComment('div');
+        console.log(newdiv);
+        newdiv.className = 'Hello';
+        newdiv.id = 'Helloid';
+        newdiv.setAttribute('title','Hellodiv');
+        
+        //newdiv.textContent =
+        let newdivtext =document.createTextNode('Hello world');
+        newdiv.appendChild(newdivtext);
+        let container =document.querySelector('header .container');
+        let h1 = document.querySelector('header, h1');
+       
+        console.log(newdiv);
+        newdiv.style.fontSize = '30px';
+        // container.insertBefore(newdiv, h1);
+        // container.insertBefore(newdiv, h1);
+        
+
+        let userList = document.getElementById('users');
+        let newLi = document.createElement('li');
+        newLi.textContent = 'Hello';
+        userList.insertBefore(newLi, userList.firstChild);
+
+
         // const item = document.querySelector('.item-group');
         // item.style.color='red';
-        const seconditem =document.querySelector('.item-group:nth-child(2)');
-       // seconditem.style.color = 'blue';
-        seconditem.style.backgroundColor = 'green';
-        const thirditem =document.querySelector('.item-group:nth-child(3)');
-        thirditem.style.display = 'none'; 
+    //     const seconditem =document.querySelector('.item-group:nth-child(2)');
+    //    // seconditem.style.color = 'blue';
+    //     seconditem.style.backgroundColor = 'green';
+    //     const thirditem =document.querySelector('.item-group:nth-child(3)');
+    //     thirditem.style.display = 'none'; 
 
     //    const liclass = document.getElementsByClassName('item-group');
         

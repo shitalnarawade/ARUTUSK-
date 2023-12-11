@@ -96,17 +96,25 @@
     </div>
     <script>
 
-       const liclass = document.getElementsByClassName('item-group');
+        // const item = document.querySelector('.item-group');
+        // item.style.color='red';
+        const seconditem =document.querySelector('.item-group:nth-child(2)');
+       // seconditem.style.color = 'blue';
+        seconditem.style.backgroundColor = 'green';
+        const thirditem =document.querySelector('.item-group:nth-child(3)');
+        thirditem.style.display = 'none'; 
+
+    //    const liclass = document.getElementsByClassName('item-group');
         
-          for(let i=0; i<liclass.length; i++){
-               liclass[i].style.fontWeight = 'bold';
-           }
-        const li = document.getElementsByTagName('li');
+    //       for(let i=0; i<liclass.length; i++){
+    //            liclass[i].style.fontWeight = 'bold';
+    //        }
+    //     const li = document.getElementsByTagName('li');
         
-            //li[1].style.fontWeight ='bold';
-               for(let i=0; i<li.length; i++){
-                li[i].style.backgroundColor = 'gray';
-        }
+    //         //li[1].style.fontWeight ='bold';
+    //            for(let i=0; i<li.length; i++){
+    //             li[i].style.backgroundColor = 'gray';
+    //     }
 
        
 

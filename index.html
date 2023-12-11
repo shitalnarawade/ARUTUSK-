@@ -83,10 +83,10 @@
 
               <div> 
                  <ul id="users">
-                     <li class="item-group" id="item1">item 1</li>
-                     <li class="item-group" id="item2">item 2</li>
-                    <li class="item-group" id="item3">item 3</li>
-                    <li class="item-group" id="item4">item 4</li>
+                     <li class="item-group" id="item1">Item 1</li>
+                     <li class="item-group" id="item2">Item 2</li>
+                    <li class="item-group" id="item3">Item 3</li>
+                    <li class="item-group" id="item4">Item 4</li>
                  </ul>
               </div> 
             </form>
@@ -96,16 +96,16 @@
     </div>
     <script>
 
-        const userhead = document.getElementById('user_head');
+       
 
-        userhead.style.border = "solid 2px #000";
-         
-        const item_1 =document.getElementById('item1');
-        item_1.style.color ='solid 2px green';
-        
-        const item = document.getElementById('item1');
-        item.style.color = 'green';
-        item.style.font = 'bold';
+  var thirdElement = document.getElementById('users').getElementsByTagName('li')[2];
+
+  var listItems = document.getElementById('users').getElementsByTagName('li');
+  for (var i = 0; i < listItems.length; i++) {
+    listItems[i].style.fontWeight ='bold';
+  }
+  
+  listItems[2].style.backgroundColor = 'green';
       
               
             

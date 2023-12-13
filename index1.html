@@ -27,7 +27,10 @@
         float: right;
       }
       .form-control {
-          display:  inline-block;
+          display:  block;
+      }
+      .btn_su{
+          margin: 10px;
       }
       .msg-1{
         display: none;
@@ -58,9 +61,13 @@
             <form id="addForm" class="col-auto">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control mr-2 inwidth" id="name" >
+                <label for="number">Age:</label>
+                <!-- <input type="number" class="form-control mr-2 inwidth" id="age" >
                 <label for="email">Email:</label>
                 <input type="email" class="form-control mr-2 inwidth" id="email" >
-                <input type="submit" class="btn btn-dark" onclick="submitForm()" value="Submit" id="btn_submit">
+                <label for="pass">Password:</label> -->
+                <input type="password" class="form-control mr-2 inwidth" id="password" >
+                <input type="submit" class="btn btn-dark  btn_su" onclick="submitForm()" value="Submit" id="btn_submit">
             </form>
 
     <div> 
@@ -86,31 +93,40 @@
         <!-- //<span>HI</span> -->
     </div>
 
-    <script>
+    <script type="text/javascript">
         let itemList = document.getElementsByClassName('item-group');
-        console.log(itemList);
         let form = document.getElementById('addForm');
-        console.log()
         let btn = document.getElementById('btn_submit');
        
 
-        function submitForm(){
-            let username = document.getElementById('name').value;
-            let email = document.getElementById('email').value;
-            let msg = document.querySelector('.msg');
-             
-            localStorage.setItem('username', name);
-            localStorage.setItem('email', email);
+        // function submitForm(){
+            let username = document.getElementById('name');
+            let email = document.getElementById('email');
+            let age = document.querySelector('.age');
+            let pass = document.getElementById('password');
 
+             
             
-            if(username !== '' || email !== ''){
-                alert("You have submit the form succesfully");
+            let myobj = {
+                name:"Shital",
+                age : 25,
+                // email:mnisha
             }
-            else{
-                alert("Please fill all the filds");
-            }
+
+            let  myobj_serialized = JSON.stringify(myobj);
+             localStorage.setItem('userDetails', myobj_serialized);
+             console.log(localStorage);
+             let myobj_deserialized = JSON.parse(localStorage.getItem("myobj"));
+             console.log(myobj_deserialized);
+
+            // if(username !== '' || email !== ''){
+            //     alert("You have submit the form succesfully");
+            // }
+            // else{
+            //     alert("Please fill all the filds");
+            // }
             
-            }
+            
         
         for (var i = 0; i < itemList.length; i++) {
               itemList[i].addEventListener('click', removbtn);

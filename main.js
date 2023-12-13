@@ -12,3 +12,6 @@ console.log("This is my first commit");
         // const item = document.getElementById('item1');
         // item.style.color = 'green';
         // item.style.font = 'bold';
+
+        // git push origin HEAD:master
+        // git push origin HEAD

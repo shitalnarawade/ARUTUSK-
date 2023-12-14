@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+
+    <form id="userInputForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div id="resultContainer"></div>
+
+    <script>
+        function submitForm() {
+            let username = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let mobile = document.getElementById('mobile').value;
+
+            let myobj = {
+                name: username,
+                email: email,
+                mobile: mobile
+            };
+
+            // Retrieve existing data from local storage
+            let existingData = JSON.parse(localStorage.getItem('userDetails')) || [];
+
+            // Add new data to the existing data
+            existingData.push(myobj);
+
+            // Store the updated data in local storage
+            localStorage.setItem('userDetails', JSON.stringify(existingData));
+
+            // Update the UI
+            displayUserData();
+        }
+
+        function displayUserData() {
+            let resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = '';
+
+            // Retrieve data from local storage
+            let storedData = JSON.parse(localStorage.getItem('userDetails')) || [];
+
+            // Display each entry in the UI
+            storedData.forEach(function(entry, index) {
+                let entryDiv = document.createElement('div');
+                entryDiv.innerHTML = `<p>Name: ${entry.name}, Email: ${entry.email}, Mobile: ${entry.mobile} 
+                    <button onclick="deleteEntry(${index})">Delete</button></p>`;
+                resultContainer.appendChild(entryDiv);
+            });
+        }
+
+        function deleteEntry(index) {
+            // Retrieve data from local storage
+            let storedData = JSON.parse(localStorage.getItem('userDetails')) || [];
+
+            // Remove the entry at the specified index
+            storedData.splice(index, 1);
+
+            // Update local storage with the modified data
+            localStorage.setItem('userDetails', JSON.stringify(storedData));
+
+            // Update the UI
+            displayUserData();
+        }
+
+        // Initial display when the page loads
+        displayUserData();
+    </script>
+
+</body>
+</html>
